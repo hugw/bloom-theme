@@ -1,0 +1,45 @@
+// Images
+.alignleft,
+.alignright,
+.aligncenter,
+.alignnone {
+  display: block;
+  max-width: 100%;
+
+  img {
+    max-width: 100%;
+  }
+}
+
+.alignleft {
+	float: left;
+	margin: rem-calc(0 $gutter 0 0);
+}
+
+.alignright {
+	float: right;
+	margin: rem-calc(0 0 0 $gutter);
+}
+
+.aligncenter {
+	clear: both;
+  margin: rem-calc(0 0 $gutter 0);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.alignnone {
+	margin: rem-calc(0 0 $gutter 0);
+}
+
+.alignleft,
+.alignright,
+.aligncenter,
+.alignnone {
+  @include breakpoint(-small down) {
+    float: none;
+    margin: rem-calc($gutter 0);
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
