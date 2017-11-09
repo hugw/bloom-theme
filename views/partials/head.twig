@@ -1,0 +1,15 @@
+<div class="head">
+	<div class="head-title">
+		<a href="{{ site.url }}" title="{{ site.name | e('html') }}" rel="home">
+			{{ site.name }}
+		</a>
+	</div>
+
+	<div class="head-social">
+		{% include 'partials/social-icons.twig' %}
+	</div>
+
+	<nav class="head-menu" role="navigation">
+		{% include 'partials/menu.twig' with { menu: menu.get_items } %}
+	</nav>
+</div>
