@@ -1,7 +1,7 @@
 {% extends "layouts/default.twig" %}
 
-{% block content %}
-	{% include "partials/content-#{type}.twig" %}
+{% block body %}
+	{% include "partials/body-#{type}.twig" %}
 
   {% if fn('comments_open') or fn('get_comments_number') %}
     {{ fn('comments_template') }}
