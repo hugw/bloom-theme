@@ -1,0 +1,31 @@
+{
+  "name": "bloom",
+  "description": "A minimalistic and subtle starter WordPress theme for faster and smooth child theme development.",
+  "author": "Hugo W. <me@hugw.io>",
+  "license": "GPLv2",
+  "version": "0.1.0",
+  "dependencies": {
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-register": "^6.26.0",
+    "eslint": "^4.10.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^3.0.0",
+    "gulp-util": "^3.0.8",
+    "gulp-watch": "^4.3.11",
+    "run-sequence": "^2.2.0"
+  },
+  "scripts": {
+    "build": "gulp",
+    "dev": "gulp dev",
+    "lint": "eslint ."
+  }
+}
