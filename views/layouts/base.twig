@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html {{ site.language_attributes }}>
+<head>
+	<meta charset="{{ site.charset }}">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+
+	{{ fn('wp_head') }}
+
+  {% block head_scripts %}
+	{% endblock %}
+</head>
+
+<body class="{{ body_class }}">
+  {% block body %}
+  {% endblock %}
+
+  {{ fn('wp_footer') }}
+
+  {% block footer_scripts %}
+  {% endblock %}
+</body>
+</html>
