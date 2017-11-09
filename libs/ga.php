@@ -8,10 +8,9 @@
  */
 
 add_action( 'wp_head', function() {
-	$code = bloom_settings( 'analytics_tracker' );
-	$tracker = bloom_settings( 'analytics_who_to_tracker' );
+	$ga = bloom_settings( 'analytics' );
 
-	if ( $tracker == 'all' ) echo $code;
-	if ( $tracker == 'no_users' && ! is_user_logged_in() ) $code;
-	if ( $tracker == 'no_admins' && ! current_user_can( 'edit_posts' ) ) echo $code;
+	if ( $ga->target == 'all' ) echo $ga->code;
+	if ( $ga->target == 'no_users' && ! is_user_logged_in() ) $ga->code;
+	if ( $ga->target == 'no_admins' && ! current_user_can( 'edit_posts' ) ) echo $ga->code;
 } );

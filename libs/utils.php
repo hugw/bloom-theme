@@ -94,9 +94,10 @@ function bloom_get_archive_title() {
 /**
  * Get settings
  */
-function bloom_settings( $name, $default = NULL ) {
+function bloom_settings( $name = NULL, $default = NULL ) {
 	global $bloom;
 
+	if ( ! $name ) return $bloom;
 	if ( isset( $bloom[ $name ] ) ) return $bloom[ $name ];
 	else return $default;
 }
