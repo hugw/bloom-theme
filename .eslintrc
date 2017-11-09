@@ -1,0 +1,15 @@
+{
+  "extends": "airbnb-base",
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es6": true,
+    "jquery": true
+  },
+  "rules": {
+    "semi": ["error", "never"],
+    "comma-dangle": "off",
+    "max-len": ["error", { "ignoreComments": true }],
+    "func-names": ["error", "never"]
+  }
+}
