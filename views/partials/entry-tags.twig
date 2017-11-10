@@ -1,0 +1,7 @@
+{% if post.tags %}
+  <div class="entry-tags">
+    {% for tag in post.tags %}
+      <a href="{{ tag.link }}" rel="category tag">{{ tag.title }}</a>
+    {% endfor %}
+  </div>
+{% endif %}
