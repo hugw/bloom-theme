@@ -50,12 +50,12 @@ add_action( 'after_setup_theme', function() {
 		],
 
 		// Content width
-		'content_width' => 610,
+		'content_width' => 790,
 
 		// Thumbnail size
 		'thumbnail_size' => (object) [
-			'width' => 610,
-			'height' => 350,
+			'width' => 790,
+			'height' => 450,
 			'crop' => true
 		]
   ];
