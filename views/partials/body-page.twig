@@ -1,0 +1,7 @@
+<article id="post-{{post.ID}}" class="{{ post.post_class('body-page') }}">
+	{% include 'partials/page-title.twig' with { title: post.title } %}
+
+	<div class="page-content">
+		{{ post.content }}
+	</div>
+</article>

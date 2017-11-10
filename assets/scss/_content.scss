@@ -1,0 +1,29 @@
+.entry-content,
+.page-content {
+  @include clearfix;
+
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  ul,
+  ol,
+  dl,
+  address,
+  blockquote,
+  hr,
+  pre,
+  figure,
+  table {
+    &:last-child {
+      margin: 0;
+    }
+
+    @include breakpoint(-xlarge up) {
+      margin: rem-calc(0 0 $gutter-large 0);
+    }
+  }
+}
