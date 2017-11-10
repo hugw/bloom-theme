@@ -1,0 +1,13 @@
+<article class="body-none body-no_results body-not_found">
+		{% include 'partials/page-title.twig' with { title: __('Nothing Found', 'bloom') } %}
+
+	<div class="page-content">
+		<p>
+			{% if fn('is_search') %}
+				{{ __('Sorry, but nothing matched your search terms. Please try again with different keywords.', 'bloom') }}
+			{% else %}
+				{{ __('It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'bloom') }}
+			{% endif %}
+		</p>
+	</div>
+</article>
