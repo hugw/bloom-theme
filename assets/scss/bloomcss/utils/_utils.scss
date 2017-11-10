@@ -1,0 +1,170 @@
+/**
+ * Utils functions and mixins
+ *
+ * @copyright Copyright (c) 2016, hugw.io
+ * @author Hugo W - me@hugw.io
+ * @license MIT
+ */
+
+/**
+ * Alert
+ */
+@mixin alert($name: '-success', $color: $color-success) {
+  &.#{$name} {
+    background-color: tint($color, 97%);
+    border-color: tint($color, 75%);
+    color: shade($color, 20%);
+  }
+}
+
+
+/**
+ * Button
+ */
+@mixin button($background: $color-foreground-light, $color: $white) {
+  background: $background;
+  color: $color;
+
+  &:hover {
+    color: $color;
+    background: shade($background, 15%);
+  }
+
+  &:focus {
+    color: $color;
+    outline: 0;
+    background: shade($background, 20%);
+  }
+
+  &:active {
+    background: shade($background, 20%);
+  }
+}
+
+
+/**
+ * Button hollowed
+ */
+@mixin button-hollow($color: $color-foreground-light) {
+  background: none !important;
+  color: shade($color, 10%);
+  border: 1px solid $color;
+
+  &:hover {
+    color: shade($color, 30%);
+    border-color: shade($color, 20%);
+  }
+
+  &:focus {
+    outline: 0;
+    color: shade($color, 40%);
+    border-color: shade($color, 30%);
+  }
+
+  &:active {
+    color: shade($color, 40%);
+    border-color: shade($color, 30%);
+  }
+}
+
+
+/**
+ * Button colored
+ */
+@mixin button-color($name: '-primary', $background: $color-primary, $color: $white) {
+  .button.#{$name} {
+    @include button($background, $color);
+
+    &.-hollow {
+      @include button-hollow($background);
+    }
+  }
+}
+
+@mixin button-group-color($name: '-primary', $background: $color-primary, $color: $white) {
+  &.#{$name} {
+    .button {
+      @include button($background, $color);
+    }
+
+    &.-hollow .button {
+      @include button-hollow($background);
+    }
+  }
+}
+
+
+/**
+ * Button size
+ */
+@mixin button-size() {
+  &.-xsmall {
+    height: rem-calc(25);
+    line-height: rem-calc(23);
+    font-size: rem-calc($fontsize - 1);
+    padding: 0 rem-calc(10);
+  }
+
+  &.-small {
+    height: rem-calc(30);
+    line-height: rem-calc(28);
+    font-size: rem-calc($fontsize - 1);
+  }
+
+  &.-medium {}
+
+  &.-large {
+    height: rem-calc(40);
+    line-height: rem-calc(38);
+    font-size: rem-calc($fontsize + 1);
+    padding: 0 rem-calc(20);
+  }
+}
+
+@mixin button-group-size() {
+  &.-xsmall .button {
+    height: rem-calc(25);
+    line-height: rem-calc(23);
+    font-size: rem-calc($fontsize - 1);
+    padding: 0 rem-calc(10);
+  }
+
+  &.-small .button {
+    height: rem-calc(30);
+    line-height: rem-calc(28);
+    font-size: rem-calc($fontsize - 1);
+  }
+
+  &.-medium .button {}
+
+  &.-large .button {
+    height: rem-calc(40);
+    line-height: rem-calc(38);
+    font-size: rem-calc($fontsize + 1);
+    padding: 0 rem-calc(20);
+  }
+}
+
+
+/**
+ * Field colored
+ */
+@mixin field-color($name: '-error', $color: $color-error) {
+  &.#{$name} {
+    #{text-inputs()},
+    textarea,
+    select {
+      border-color: tint($color, 60%);
+      color: shade($color, 20%);
+
+      &:focus {
+        background-color: tint($color, 95%);
+      }
+    }
+
+    > label,
+    > .field-help {
+      color: shade($color, 20%);
+    }
+  }
+}

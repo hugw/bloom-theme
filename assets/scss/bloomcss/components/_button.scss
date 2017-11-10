@@ -1,0 +1,163 @@
+/**
+ * Button component styles
+ *
+ * @copyright Copyright (c) 2016, hugw.io
+ * @author Hugo W - me@hugw.io
+ * @license MIT
+ */
+
+.button,
+button,
+input[type="submit"],
+input[type="reset"] {
+  line-height: rem-calc(33);
+  height: rem-calc(35);
+  display: inline-block;
+  border-radius: $radius;
+  padding: 0 rem-calc(15);
+  @include transition(all $transition);
+  border: 1px solid transparent;
+
+  & {
+    @include button();
+  }
+}
+
+.button .icon {
+  padding-right: rem-calc(5);
+}
+
+.button.-icon .icon {
+  padding: 0;
+  width: (18em / 14);
+  text-align: center;
+}
+
+
+/*--------------------
+  Size
+---------------------*/
+
+.button {
+  @include button-size();
+}
+
+
+/*--------------------
+  Hollow
+---------------------*/
+
+.button.-hollow {
+  & {
+    @include button-hollow();
+  }
+}
+
+
+/*--------------------
+  Colors
+---------------------*/
+
+@include button-color();
+@include button-color('-secondary', $color-secondary);
+@include button-color('-success', $color-success);
+@include button-color('-error', $color-error);
+@include button-color('-magenta', $magenta);
+@include button-color('-turquoise', $turquoise);
+@include button-color('-teal', $teal);
+@include button-color('-red', $red);
+@include button-color('-yellow', $yellow);
+@include button-color('-blue', $blue);
+@include button-color('-orange', $orange);
+@include button-color('-green', $green);
+
+
+/*--------------------
+  Button groups
+---------------------*/
+
+.buttons {
+  display: inline-block;
+  font-size: 0;
+  line-height: 1;
+  margin-right: rem-calc(5);
+
+  // Default
+  .button {
+    border-radius: 0;
+  }
+
+  .button:first-child {
+    border-radius: $radius 0 0 $radius;
+  }
+
+  .button:last-child {
+    border-radius: 0 $radius $radius 0;
+  }
+
+  .button:only-child {
+    border-radius: $radius;
+  }
+
+  &:not(.-xsmall):not(.-small):not(.-large)
+  .button:not(.-xsmall):not(.-small):not(.-large) {
+    font-size: rem-calc($fontsize);
+  }
+
+  @include button-group-size();
+}
+
+// Icon
+.buttons.-icon .button:not(.-icon) .icon {
+  padding: 0;
+  width: (18em / 14);
+  text-align: center;
+}
+
+// Hollow
+.buttons.-hollow {
+  .button:not(.-hollow) {
+    position: relative;
+    @include button-hollow();
+
+    &:not(:first-child) {
+      margin-left: -1px;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      z-index: 100;
+    }
+  }
+}
+
+.buttons .button.-hollow {
+  position: relative;
+
+  &:not(:first-child) {
+    margin-left: -1px;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    z-index: 100;
+  }
+}
+
+// Colors
+.buttons {
+  @include button-group-color();
+  @include button-group-color('-secondary', $color-secondary);
+  @include button-group-color('-success', $color-success);
+  @include button-group-color('-error', $color-error);
+  @include button-group-color('-magenta', $magenta);
+  @include button-group-color('-turquoise', $turquoise);
+  @include button-group-color('-teal', $teal);
+  @include button-group-color('-red', $red);
+  @include button-group-color('-yellow', $yellow);
+  @include button-group-color('-blue', $blue);
+  @include button-group-color('-orange', $orange);
+  @include button-group-color('-green', $green);
+}
