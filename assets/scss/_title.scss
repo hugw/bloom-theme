@@ -1,0 +1,11 @@
+.page-header,
+.entry-header {
+  .page-title,
+  .page-description,
+  .entry-title {
+    line-height: 1;
+    font-size: rem-calc($fontsize);
+    margin: 0;
+  }
+}
+
