@@ -1,5 +1,6 @@
 .entry-content,
-.page-content {
+.page-content,
+.textwidget {
   @include clearfix;
 
   p,
