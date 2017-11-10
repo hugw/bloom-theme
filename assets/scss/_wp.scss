@@ -52,3 +52,15 @@
 		display: block;
 	}
 }
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.gallery-item {
+  width: 33%;
+  flex: 1 1 33%;
+}
