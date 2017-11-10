@@ -1,0 +1,11 @@
+{% if post.get_thumbnail %}
+  <div class="entry-thumbnail">
+    {% if fn('is_single') %}
+      <img src="{{ post.thumbnail.src('post-thumbnail') }}" alt="{{ post.title | e('html') }}" title="{{ post.title | e('html') }}" />
+    {% else %}
+      <a href="{{ post.link }}" title="{{ post.title | e('html') }}" rel="bookmark">
+        <img src="{{ post.thumbnail.src('post-thumbnail') }}" alt="{{ post.title | e('html') }}" title="{{ post.title | e('html') }}" />
+      </a>
+    {% endif %}
+  </div>
+{% endif %}

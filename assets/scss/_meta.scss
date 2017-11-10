@@ -13,3 +13,11 @@
     display: inline-block;
   }
 }
+
+.entry-thumbnail {
+  line-height: 1;
+
+  a, img {
+    display: block;
+  }
+}
