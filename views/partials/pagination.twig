@@ -1,0 +1,57 @@
+{% if posts.pagination.pages is not empty %}
+  <div class="pagination">
+    <ul>
+      {% if pagination.pages|first and pagination.pages|first.current != true %}
+        <li class="pagination-first">
+          <a href="{{ pagination.pages|first.link }}">{{ _e('First', 'bloom') }}</a>
+        </li>
+      {% else %}
+        <li class="pagination-first">
+          <a>{{ _e('First', 'bloom') }}</a>
+        </li>
+      {% endif %}
+
+      {% if pagination.prev %}
+        <li class="pagination-prev">
+          <a href="{{ pagination.prev.link }}">{{ _e('Previous', 'bloom') }}</a>
+        </li>
+      {% else %}
+        <li class="pagination-prev -disabled">
+          <a>{{ _e('Previous', 'bloom') }}</a>
+        </li>
+      {% endif %}
+
+      {% for page in pagination.pages %}
+        {% if page.link %}
+          <li>
+            <a href="{{ page.link }}" class="{{ page.class }}">{{ page.title }}</a>
+          </li>
+        {% else %}
+          <li class="pagination-current">
+            <a class="{{ page.class }}">{{ page.title }}</a>
+          </li>
+        {% endif %}
+      {% endfor %}
+
+      {% if pagination.next %}
+        <li class="pagination-next">
+          <a href="{{ pagination.next.link }}">{{ _e('Next', 'bloom') }}</a>
+        </li>
+      {% else %}
+        <li class="pagination-next -disabled">
+          <a>{{ _e('Next', 'bloom') }}</a>
+        </li>
+      {% endif %}
+
+      {% if pagination.pages|last and pagination.pages|last.current != true %}
+        <li class="pagination-last">
+          <a href="{{ pagination.pages|last.link }}">{{ _e('Last', 'bloom') }}</a>
+        </li>
+      {% else %}
+        <li class="pagination-last -disabled">
+          <a>{{ _e('Last', 'bloom') }}</a>
+        </li>
+      {% endif %}
+    </ul>
+  </div>
+{% endif %}
