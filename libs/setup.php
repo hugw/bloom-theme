@@ -101,6 +101,8 @@ add_action( 'widgets_init', function() {
 /**
  * Expose settings to
  * page context
+ *
+ * * Can't be replaced by child themes
  */
 add_filter( 'timber/context', function( $ctx ) {
 	$ctx['primary_sidebar'] = Timber::get_widgets('primary-sidebar');
@@ -256,7 +258,6 @@ add_filter('widget_tag_cloud_args', function( $args ) {
  */
 add_filter( 'get_search_form', function() {
 	Timber::render( 'partials/search-form.twig' );
-
 	return '';
 });
 
@@ -279,4 +280,22 @@ add_filter( 'upload_mimes', function( $mimes ) {
 	if ( function_exists( 'current_user_can' ) ) $unfiltered = current_user_can( 'unfiltered_html' );
 	if ( ! empty( $unfiltered ) ) $mimes['swf'] = 'application/x-shockwave-flash';
 	return $mimes;
+} );
+
+/**
+ * Add supported for
+ * paginated posts
+ *
+ * * Can't be replaced by child themes
+ */
+add_filter( 'mce_buttons', function ($mce_buttons) {
+	$pos = array_search( 'wp_more', $mce_buttons, true );
+
+	if ($pos !== false) {
+		$tmp_buttons = array_slice( $mce_buttons, 0, $pos + 1 );
+		$tmp_buttons[] = 'wp_page';
+		$mce_buttons = array_merge( $tmp_buttons, array_slice( $mce_buttons, $pos + 1 ) );
+	}
+
+	return $mce_buttons;
 } );
