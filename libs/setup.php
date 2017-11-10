@@ -31,7 +31,7 @@ add_action( 'after_setup_theme', function() {
 	add_theme_support( 'automatic-feed-links' );
 
 	// Editor style
-	//add_editor_style( '/assets/css/bloom-editor.min.css' );
+	add_editor_style( '/assets/css/bloom-editor.min.css' );
 
 	// Switch default core markup for search form, comment form, and comments
 	// to output valid HTML5.

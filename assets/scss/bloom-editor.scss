@@ -1,0 +1,34 @@
+@import 'bloomcss/vendor/bourbon/bourbon';
+
+// Foundation utils
+@import 'bloomcss/vendor/foundation/util/util';
+
+// Settings
+@import 'bloomcss/settings';
+
+// Utils
+@import 'bloomcss/utils/utils';
+
+// Base
+@import 'bloomcss/base/normalize';
+@import 'bloomcss/base/foundation';
+@import 'bloomcss/base/typography';
+
+// Theme related
+@import 'wp';
+
+$width: 610px;
+
+html .mceContentBody {
+	margin: rem-calc(10 0 0 10);
+	max-width: $width;
+	color: $color-foreground;
+	font-size: rem-calc($fontsize);
+	font-family: $fontfamily;
+	line-height: $lineheight;
+}
+
+.mceItemNoResize {
+	height: 15px !important;
+	max-height: 15px;
+}
