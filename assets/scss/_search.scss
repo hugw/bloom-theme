@@ -1,0 +1,15 @@
+.search {
+  display: flex;
+  width: 100%;
+
+  .search-input {
+    flex: 1 1 60%;
+    width: 60%;
+  }
+
+  .search-button {
+    flex: 0 0 80px;
+    width: 80px;
+    margin-left: rem-calc($gutter);
+  }
+}
