@@ -29,10 +29,13 @@ jQuery(document).ready(($) => {
         const fbUrl = `https://graph.facebook.com/?id=${url}`
 
         $.get(fbUrl, ({ share }, status, jqXHR) => {
+          let count = 0
+
           if (jqXHR.status === 200 && status === 'success') {
-            const count = share.share_count + share.comment_count
-            $this.find('.entry-share_counter').text(count)
+            count = share.share_count + share.comment_count
           }
+
+          $this.find('.entry-share_counter').text(count)
         })
       })
     }

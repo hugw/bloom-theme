@@ -1,0 +1,24 @@
+{% set url = fn('wp_get_shortlink') %}
+{% set text = "#{post.title | e('html')} - #{site.name}" %}
+
+<div id="entry-share_{{ post.ID }}" class="entry-share" data-url="{{ url }}">
+	<div class="entry-share_counter"></div>
+
+	<div class="entry-share_item entry-share_facebook">
+		<a href="https://www.facebook.com/sharer.php?u={{ url }}&t={{ text }}" class="popup" title="{{ __('share it', 'bloom') }}">
+			<i class="icon -facebook"></i>
+		</a>
+	</div>
+
+	<div class="entry-share_item entry-share_twitter">
+		<a href="https://twitter.com/intent/tweet?text={{ text }} {{ url }}" class="popup" title="{{ __('share it', 'bloom') }}">
+			<i class="icon -twitter"></i>
+		</a>
+	</div>
+
+	<div class="entry-share_item entry-share_gplus">
+		<a href="https://plus.google.com/share?url={{ url }}" class="popup" title="{{ __('share it', 'bloom') }}">
+			<i class="icon -google-plus"></i>
+		</a>
+	</div>
+</div>

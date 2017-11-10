@@ -4,3 +4,12 @@
 .entry-date {
   line-height: 1;
 }
+
+.entry-share {
+  line-height: 1;
+
+  .entry-share_item,
+  .entry-share_counter {
+    display: inline-block;
+  }
+}
