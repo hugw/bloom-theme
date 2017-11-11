@@ -8,25 +8,15 @@
  */
 
 add_action( 'tgmpa_register', function() {
-	$plugins = array(
-		array(
-			'name'      => 'WordPress SEO by Yoast',
-			'slug'      => 'wordpress-seo',
-			'required'  => false,
-		),
-		array(
+	$plugins = [
+		[
 			'name'      => 'Timber',
 			'slug'      => 'timber-library',
 			'required'  => true,
-		),
-		array(
-			'name'      => 'Image Compression',
-			'slug'      => 'wp-smushit',
-			'required'  => false,
-		),
-	);
+		]
+	];
 
-	$config = array(
+	$config = [
 		'id'           => 'bloom',                 // Unique ID for hashing notices for multiple instances of TGMPA.
 		'default_path' => '',                      // Default absolute path to bundled plugins.
 		'menu'         => 'tgmpa-install-plugins', // Menu slug.
@@ -39,7 +29,7 @@ add_action( 'tgmpa_register', function() {
 		'message'      => '',                      // Message to output right before the plugins table.
 
 
-		'strings'      => array(
+		'strings'      => [
 			'page_title' => __( 'Install Required Plugins', 'bloom' ),
 			'menu_title' => __( 'Install Plugins', 'bloom' ),
 			'installing' => __( 'Installing Plugin: %s', 'bloom' ),
@@ -103,8 +93,8 @@ add_action( 'tgmpa_register', function() {
 			'contact_admin'                   => __( 'Please contact the administrator of this site for help.', 'bloom' ),
 
 			'nag_type'                        => '', // 'updated', 'update-nag', 'notice-warning', 'notice-info' or 'error'.
-		),
-	);
+		],
+	];
 
-	tgmpa( $plugins, $config );
+	tgmpa( apply_filters( '_bloom_child_tgm_plugins', $plugins ), apply_filters( '_bloom_child_tgm_config', $config ) );
 } );
