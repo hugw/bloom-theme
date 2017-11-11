@@ -39,9 +39,12 @@ add_action( 'after_setup_theme', function() {
 		// 	'max_posts'  => 4
 		// ],
 
-		// Misc
-		'excerpt_length' => '25',
-		'excerpt_more' => '...',
+		// Preview
+		'preview' => (object) [
+			'length' => '25',
+			'end' => ' ...',
+			'read_more' => __( 'Read more', 'bloom' ),
+		],
 
 		// Analytics
 		'analytics' => (object) [

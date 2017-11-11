@@ -17,7 +17,7 @@
 // Theme related
 @import 'wp';
 
-$width: 790px;
+$width: 790px !default;
 
 html .mceContentBody {
 	margin: rem-calc(10 0 0 10);

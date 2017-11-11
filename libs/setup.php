@@ -31,7 +31,7 @@ add_action( 'after_setup_theme', function() {
 	add_theme_support( 'automatic-feed-links' );
 
 	// Editor style
-	add_editor_style( '/assets/css/bloom-editor.min.css' );
+	if ( ! is_child_theme() ) add_editor_style( '/assets/css/bloom-editor.min.css' );
 
 	// Switch default core markup for search form, comment form, and comments
 	// to output valid HTML5.
@@ -49,16 +49,6 @@ add_action( 'after_setup_theme', function() {
 	$thumb = bloom_settings( 'thumbnail_size' );
 	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size( $thumb->width, $thumb->height, $thumb->crop );
-
-	// Excerpt Length
-	add_filter( 'excerpt_length', function() {
-		return bloom_settings( 'excerpt_length' );
-	} );
-
-	// Excerpt more
-	add_filter( 'excerpt_more', function( $more ) {
-		return bloom_settings( 'excerpt_more' );
-	} );
 
 	// Disable Jetpack Open Graph
 	// when WPSEO by Yoast is present
