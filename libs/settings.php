@@ -18,10 +18,10 @@ add_action( 'after_setup_theme', function() {
 	$bloom = [
 		// Social icons
 		'social' => (object) [
-			'twitter'    => '/',
-			'facebook'   => '/',
-			'googleplus' => '/',
-			'youtube'    => '/',
+			'twitter'    => '',
+			'facebook'   => '',
+			'googleplus' => '',
+			'youtube'    => '',
 			'instagram'  => '',
 			'flickr'     => '',
 			'dribbble'   => '',
@@ -31,13 +31,6 @@ add_action( 'after_setup_theme', function() {
 			'vimeo'      => '',
 			'rss'        => '/feed',
 		],
-
-		// Related posts
-		// 'related_posts' => [
-		// 	'post_types' => ['post'],
-		// 	'auto_posts' => TRUE,
-		// 	'max_posts'  => 4
-		// ],
 
 		// Preview
 		'preview' => (object) [
@@ -61,7 +54,7 @@ add_action( 'after_setup_theme', function() {
 			'height' => 450,
 			'crop' => true
 		]
-  ];
+	];
 
 	// Merge child theme config values
   $bloom = apply_filters( '_bloom_child_settings', $bloom );
