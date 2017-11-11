@@ -1,6 +1,12 @@
-# bloom.theme
+# bloom.theme()
 
 A minimalistic and subtle starter WordPress theme for faster and smooth child theme development.
+
+## Requirements
+
+- PHP 5.4+
+- WordPress 3.6+
+- [Timber (TWIG Templates)](https://github.com/timber/timber)
 
 ***
 

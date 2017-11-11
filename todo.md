@@ -3,4 +3,4 @@
 - add support for slideshow
 - add recent posts widget
 - add source set support
-- translate lang files
+- add facebook token api on settings
