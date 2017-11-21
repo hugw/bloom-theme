@@ -1,7 +1,7 @@
 {% if posts.pagination.pages is not empty %}
   <div class="pagination">
     <ul>
-      {% if pagination.pages|first and pagination.pages|first.current != true %}
+      {% if pagination.pages | first and pagination.pages | first.current != true %}
         <li class="pagination-first">
           <a href="{{ pagination.pages|first.link }}">{{ _e('First', 'bloom') }}</a>
         </li>
@@ -43,7 +43,7 @@
         </li>
       {% endif %}
 
-      {% if pagination.pages|last and pagination.pages|last.current != true %}
+      {% if pagination.pages | last and pagination.pages | last.current != true %}
         <li class="pagination-last">
           <a href="{{ pagination.pages|last.link }}">{{ _e('Last', 'bloom') }}</a>
         </li>

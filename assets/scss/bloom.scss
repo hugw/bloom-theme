@@ -1,36 +1,254 @@
+// Vendor
 @import 'bloomcss/vendor/bourbon/bourbon';
-
-// Foundation utils
 @import 'bloomcss/vendor/foundation/util/util';
 
-// Settings
+// Bloomcss
 @import 'bloomcss/settings';
-
-// Utils
 @import 'bloomcss/utils/utils';
-
-// Base
 @import 'bloomcss/base/normalize';
 @import 'bloomcss/base/foundation';
 @import 'bloomcss/base/grid';
 @import 'bloomcss/base/typography';
 @import 'bloomcss/base/form';
 @import 'bloomcss/base/visibility';
-
-// Components
 @import 'bloomcss/components/form';
 @import 'bloomcss/components/icon';
 @import 'bloomcss/components/button';
 // @import 'bloomcss/components/panel';
 // @import 'bloomcss/components/alert';
 
-// Theme related
+// Theme
 @import 'wp';
-@import 'head';
-@import 'footer';
-@import 'body';
-@import 'title';
-@import 'content';
-@import 'pagination';
-@import 'meta';
-@import 'search';
+
+// Base structure
+.site,
+.head,
+.body,
+.footer {
+  @include clearfix();
+}
+
+// Head
+.head {
+  line-height: 1;
+}
+
+.head-social ul {
+  line-height: 1;
+  font-size: 0;
+  list-style: none;
+  margin: 0;
+  text-align: right;
+  width: 100%;
+
+  li {
+    display: inline-block;
+    padding: 0;
+    font-size: rem-calc($fontsize);
+  }
+}
+
+// Menu
+.menu {
+  line-height: 1;
+  font-size: 0;
+  list-style: none;
+  text-align: left;
+  margin: 0;
+  width: 100%;
+
+  li {
+    display: inline-block;
+    font-size: rem-calc($fontsize);
+    position: relative;
+
+    &:hover > ul {
+      display: block;
+    }
+  }
+
+  // First level
+  li ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+  }
+
+  // Second level
+  li ul ul {
+    top: 0;
+    left: 100%;
+  }
+
+  // Third level
+  li ul ul ul {
+    display: none;
+  }
+}
+
+// Titles
+.page-title,
+.page-description,
+.post-title {
+  line-height: 1;
+  font-size: rem-calc($fontsize);
+  margin: 0;
+}
+
+// Content
+.post-content,
+.page-content,
+.textwidget {
+  @include clearfix;
+
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  ul,
+  ol,
+  dl,
+  address,
+  blockquote,
+  hr,
+  pre,
+  figure,
+  table {
+    &:last-child {
+      margin: 0;
+    }
+
+    @include breakpoint(-xlarge up) {
+      margin: rem-calc(0 0 $gutter-large 0);
+    }
+  }
+}
+
+// Meta
+.post-author,
+.post-tags,
+.post-category,
+.post-date,
+.post-pagination {
+  line-height: 1;
+}
+
+// Share
+.post-share {
+  line-height: 1;
+}
+
+.post-share_item,
+.post-share_counter {
+  display: inline-block;
+}
+
+.post-thumbnail {
+  line-height: 1;
+
+  a, img {
+    display: block;
+  }
+}
+
+.post-preview {
+  line-height: 1;
+}
+
+// Pagination
+.pagination ul {
+  line-height: 1;
+  font-size: 0;
+  list-style: none;
+  margin: 0;
+
+  li {
+    display: inline-block;
+    padding: 0;
+    font-size: rem-calc($fontsize);
+  }
+}
+
+// Recent Posts
+.recent-posts {
+  line-height: 1;
+}
+
+.recent-posts_item {
+  display: flex;
+}
+
+.recent-posts_thumbnail {
+  width: rem-calc(120);
+  margin-right: rem-calc($gutter);
+}
+
+.recent-posts_body {
+  flex: 1 1 50%;
+  width: 50%;
+}
+
+// Search
+.search {
+  display: flex;
+  width: 100%;
+}
+
+.search-field {
+  flex: 1 1 60%;
+  width: 60%;
+}
+
+.search-action {
+  flex: 0 0 rem-calc(80);
+  width: rem-calc(80);
+  margin-left: rem-calc($gutter);
+}
+
+// Related posts
+.post-related {
+  line-height: 1;
+
+  .entry-content & {
+    margin-bottom: rem-calc($gutter)
+  }
+}
+
+.post-related_items {
+  display: flex;
+}
+
+.post-related_title {
+  line-height: 1;
+  font-size: rem-calc($fontsize);
+  margin: 0;
+}
+
+.post-related_thumbnail {
+  img,
+  a {
+    display: block;
+  }
+}
+
+// Footer
+.footer {
+  line-height: 1;
+}
+
+.footer-social ul {
+  line-height: 1;
+  font-size: 0;
+  list-style: none;
+  margin: 0;
+
+  li {
+    display: inline-block;
+    padding: 0;
+    font-size: rem-calc($fontsize);
+  }
+}

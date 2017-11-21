@@ -1,0 +1,9 @@
+<div class="post-date">
+  <time class="post-created published" datetime="{{ post.date }}">{{ post.date }}</time>
+
+  {% if post.modified_date %}
+    <time class="post-updated updated" datetime="{{ post.modified_date }}">{{ post.modified_date }}</time>
+  {% endif %}
+</div>
+
+

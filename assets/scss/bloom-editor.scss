@@ -1,20 +1,15 @@
+// Vendor
 @import 'bloomcss/vendor/bourbon/bourbon';
-
-// Foundation utils
 @import 'bloomcss/vendor/foundation/util/util';
 
-// Settings
+// Bloomcss
 @import 'bloomcss/settings';
-
-// Utils
 @import 'bloomcss/utils/utils';
-
-// Base
 @import 'bloomcss/base/normalize';
 @import 'bloomcss/base/foundation';
 @import 'bloomcss/base/typography';
 
-// Theme related
+// Theme
 @import 'wp';
 
 $width: 790px !default;

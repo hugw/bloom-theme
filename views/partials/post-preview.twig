@@ -1,6 +1,6 @@
 {% if post.preview %}
 	{% set cfg = settings.preview %}
-	<div class="entry-preview">
+	<div class="post-preview entry-summary">
 		{{ post.preview.length(cfg.length).end(cfg.end).read_more(cfg.read_more) }}
 	</div>
 {% endif %}

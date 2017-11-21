@@ -1,0 +1,18 @@
+<article id="post-{{ post.ID }}" class="post hentry">
+  {% include 'partials/post-thumbnail.twig' %}
+  {% include 'partials/post-title.twig' %}
+  {% include 'partials/post-content.twig' %}
+  {% include 'partials/post-pagination.twig' %}
+
+	<div class="post-meta">
+		{% if post.post_type == 'post' %}
+      {% include 'partials/post-date.twig' %}
+      {% include 'partials/post-author.twig' %}
+      {% include 'partials/post-category.twig' %}
+      {% include 'partials/post-tags.twig' %}
+		{% endif %}
+	</div>
+
+  {% include 'partials/post-share.twig' %}
+  {% include 'partials/post-related.twig' %}
+</article>

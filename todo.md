@@ -1,6 +1,0 @@
-- add support for native comments
-- add support for galleries
-- add support for slideshow
-- add recent posts widget
-- add source set support
-- add facebook token api on settings

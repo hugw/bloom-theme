@@ -13,6 +13,16 @@ add_action( 'tgmpa_register', function() {
 			'name'      => 'Timber',
 			'slug'      => 'timber-library',
 			'required'  => true,
+		],
+		[
+			'name'      => 'WordPress SEO by Yoast',
+			'slug'      => 'wordpress-seo',
+			'required'  => false,
+		],
+		[
+			'name'      => 'Image Compression',
+			'slug'      => 'wp-smushit',
+			'required'  => false,
 		]
 	];
 

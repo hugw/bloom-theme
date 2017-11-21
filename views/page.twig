@@ -1,9 +1,9 @@
 {% extends "layouts/default.twig" %}
 
 {% block body %}
-	{% include "partials/body-#{type}.twig" %}
+	{% include "partials/#{type}.twig" %}
 
-  {% if fn('comments_open') or fn('get_comments_number') %}
+  {% if post.comment_status == "open" or post.comments %}
     {{ fn('comments_template') }}
   {% endif %}
 {% endblock %}

@@ -1,5 +1,5 @@
 {% if post.categories %}
-  <div class="entry-category">
+  <div class="post-category">
     {% for category in post.categories %}
       <a href="{{ category.link }}" rel="category tag">{{ category.title }}</a>
     {% endfor %}

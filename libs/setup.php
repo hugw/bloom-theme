@@ -50,6 +50,10 @@ add_action( 'after_setup_theme', function() {
 	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size( $thumb->width, $thumb->height, $thumb->crop );
 
+	// Register image sizes
+	$rp_thumb = bloom_settings( 'recent_posts_thumbnail_size' );
+	add_image_size('recent-posts', $rp_thumb->width, $rp_thumb->height, $rp_thumb->crop );
+
 	// Disable Jetpack Open Graph
 	// when WPSEO by Yoast is present
 	if ( defined('WPSEO_VERSION') && defined( 'JETPACK__VERSION' ) ) {
@@ -108,7 +112,7 @@ add_filter( 'timber/context', function( $ctx ) {
  * * Can't be replaced by child themes
  */
 add_action( 'wp_enqueue_scripts', function() {
-	wp_enqueue_style( 'bloom-theme' , BLOOM_URL . '/assets/css/bloom.min.css' );
+	if ( !is_child_theme() ) wp_enqueue_style( 'bloom-theme' , BLOOM_URL . '/assets/css/bloom.min.css' );
 
 	// Enqueue child themes stylesheets
 	do_action( '_bloom_enqueue_stylesheets' );

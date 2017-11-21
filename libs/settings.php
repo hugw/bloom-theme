@@ -53,6 +53,13 @@ add_action( 'after_setup_theme', function() {
 			'width' => 790,
 			'height' => 450,
 			'crop' => true
+		],
+
+		// Recent post thumbnail size
+		'recent_posts_thumbnail_size' => (object) [
+			'width' => 120,
+			'height' => 68,
+			'crop' => true
 		]
 	];
 

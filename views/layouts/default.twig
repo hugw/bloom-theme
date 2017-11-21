@@ -1,39 +1,46 @@
 {% extends "layouts/base.twig" %}
 
 {% block page %}
-  <div id="page" class="hfeed">
-    <header id="head" class="grid-row" role="banner">
-      <div class="grid-column -medium-12">
-        {% block head %}
-          {% include 'partials/head.twig' %}
-        {% endblock %}
-      </div>
-		</header>
-
-		<div id="body" class="grid-row">
-      <div class="grid-column -medium-12">
-        <div class="body">
-          <main class="main" role="main">
-            {% block body %}
-            {% endblock %}
-          </main>
-
-          {% block sidebar %}
-            <div class="sidebar">
-              {% if primary_sidebar %}
-                {{ primary_sidebar }}
-              {% endif %}
-            </div>
+  <div class="site" class="hfeed">
+    <header class="head" role="banner">
+      <div class="grid-row">
+        <div class="grid-column -medium-12">
+          {% block head %}
+            {% include 'partials/head.twig' %}
           {% endblock %}
         </div>
       </div>
-		</div>
+		</header>
 
-    <footer id="footer" class="grid-row" role="contentinfo">
-      <div class="grid-column -medium-12">
-        {% block footer %}
-          {% include 'partials/footer.twig' %}
-        {% endblock %}
+    <div class="body">
+      <div class="grid-row">
+        <div class="grid-column -medium-12">
+          <div class="body-inner">
+            <main class="body-main" role="main">
+              {% block body %}
+              {% endblock %}
+            </main>
+
+            {% block sidebar %}
+              <div class="body-sidebar">
+                {% if primary_sidebar %}
+                  {{ primary_sidebar }}
+                {% endif %}
+              </div>
+            {% endblock %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <footer class="footer" role="contentinfo">
+      <div class="grid-row">
+        <div class="grid-column -medium-12">
+          {% block footer %}
+            {% include 'partials/footer.twig' %}
+          {% endblock %}
+        </div>
       </div>
 		</footer>
 	</div>

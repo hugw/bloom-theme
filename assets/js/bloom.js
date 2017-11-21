@@ -17,7 +17,7 @@ jQuery(document).ready(($) => {
 */
 jQuery(document).ready(($) => {
   $(window).load(() => {
-    const $els = $('.entry-share')
+    const $els = $('.post-share')
 
     if ($els.length) {
       $els.each(function () {
@@ -35,9 +35,25 @@ jQuery(document).ready(($) => {
             count = share.share_count + share.comment_count
           }
 
-          $this.find('.entry-share_counter').text(count)
+          $this.find('.share-counter').text(count)
         })
       })
     }
   })
+})
+
+/**
+ * Add related posts
+ * positioning inside content
+ * when available
+ */
+jQuery(document).ready(($) => {
+  const $related = $('.relatedposts')
+  const $placeholder = $('.post-content p').contents().map(function () {
+    return (this.nodeType === 8) ? $(this).parent() : null
+  })
+
+  if ($related.length && $placeholder.length) {
+    $placeholder[0].replaceWith($related)
+  }
 })

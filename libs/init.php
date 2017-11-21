@@ -20,8 +20,11 @@ foreach ( [
 	'settings',
 	'setup',
 
-	// Widgets & Modules
-	'ga',
+	// Widgets & Templates
+	'templates/ga',
+	'templates/breadcrumb',
+	'templates/recent-posts',
+	'templates/ads',
 
 	// Vendor
 	'vendor/tgm/class-tgm-plugin-activation',

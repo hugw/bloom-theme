@@ -1,0 +1,29 @@
+<div class="ad -{{ item.type }} ad-{{ name }}">
+  {% if item.type == 'flash' %}
+    <object
+      classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab"
+      width="{{ width }}"
+      height="{{ height }}"
+    >
+      <param name="movie" value="{{ item.flash }}" />
+      <embed src="{{ item.flash }}" width="{{ width }}" height="{{ height }}" type="application/x-shockwave-flash" pluginspage="http://www.adobe.com/go/getflashplayer" />
+    </object>
+  {% endif %}
+
+  {% if item.type == 'image' %}
+    <a href="{{ item.url ? item.url : 'javascript:void(0);' }}" target="_blank" rel="nofollow">
+      <img src="{{ item.image }}" width="{{ width }}" height="{{ height }}" />
+    </a>
+  {% endif %}
+
+  {% if item.type == 'code' %}
+    {{ item.code }}
+  {% endif %}
+
+  {% if item.type == 'adsense' %}
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <ins class="adsbygoogle adsense-{{ name }}" style="display:inline-block" data-ad-client="{{ item.client_id }}"
+    data-ad-slot="{{ item.slot_id }}"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  {% endif %}
+</div>
