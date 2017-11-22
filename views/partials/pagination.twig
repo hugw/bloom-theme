@@ -26,11 +26,15 @@
           <li>
             <a href="{{ page.link }}" class="{{ page.class }}">{{ page.title }}</a>
           </li>
-        {% else %}
-          <li class="pagination-current">
+        {% elseif page.class == 'dots' %}
+          <li class="pagination-dots">
             <a class="{{ page.class }}">{{ page.title }}</a>
           </li>
-        {% endif %}
+        {% else %}
+        <li class="pagination-current">
+          <a class="{{ page.class }}">{{ page.title }}</a>
+        </li>
+      {% endif %}
       {% endfor %}
 
       {% if pagination.next %}

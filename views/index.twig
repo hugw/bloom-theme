@@ -10,7 +10,7 @@
 			{% include 'partials/post-list.twig' %}
 		{% endfor %}
 
-		{% set pagination_opts = posts.pagination({show_all: false, mid_size: 3, end_size: 2}) %}
+		{% set pagination_opts = posts.pagination({show_all: false, mid_size: 2, end_size: 1}) %}
 		{% include 'partials/pagination.twig' with { pagination: pagination_opts } %}
 	{% else %}
 		{% include 'partials/page-none.twig' %}
