@@ -3,7 +3,7 @@
     <ul>
       {% if pagination.pages | first and pagination.pages | first.current != true %}
         <li class="pagination-first">
-          <a href="{{ pagination.pages|first.link }}">{{ _e('First', 'bloom') }}</a>
+          <a href="{{ pagination.pages | first.link }}">{{ _e('First', 'bloom') }}</a>
         </li>
       {% else %}
         <li class="pagination-first">
@@ -24,7 +24,7 @@
       {% for page in pagination.pages %}
         {% if page.link %}
           <li>
-            <a href="{{ page.link }}" class="{{ page.class }}">{{ page.title }}</a>
+            <a href="{{ page.link }}">{{ page.title }}</a>
           </li>
         {% elseif page.class == 'dots' %}
           <li class="pagination-dots">
@@ -49,7 +49,7 @@
 
       {% if pagination.pages | last and pagination.pages | last.current != true %}
         <li class="pagination-last">
-          <a href="{{ pagination.pages|last.link }}">{{ _e('Last', 'bloom') }}</a>
+          <a href="{{ pagination.pages | last.link }}">{{ _e('Last', 'bloom') }}</a>
         </li>
       {% else %}
         <li class="pagination-last -disabled">
