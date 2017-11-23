@@ -4,6 +4,8 @@
 	{% include "partials/#{type}.twig" %}
 
   {% if post.comment_status == "open" or post.comments %}
-    {{ fn('comments_template') }}
+    <div class="comments">
+      {{ fn('comments_template') }}
+    </div>
   {% endif %}
 {% endblock %}
