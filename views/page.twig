@@ -1,11 +1,9 @@
 {% extends "layouts/default.twig" %}
 
 {% block body %}
-	{% include "partials/#{type}.twig" %}
-
-  {% if post.comment_status == "open" or post.comments %}
-    <div class="comments">
-      {{ fn('comments_template') }}
+  <div class="main">
+    <div class="main-page">
+      {% include "partials/page.twig" %}
     </div>
-  {% endif %}
+  </div>
 {% endblock %}

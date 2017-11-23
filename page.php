@@ -8,7 +8,6 @@
  */
 
 $ctx = Timber::get_context();
-$ctx['post'] = $post = new Timber\Post();
-$ctx['type'] = 'page';
+$ctx['page'] = $page = new Timber\Post();
 
-Timber::render( ['page-' . $post->post_name . '.twig', 'page.twig'], $ctx );
+Timber::render( ['page-' . $page->post_name . '.twig', 'page.twig'], $ctx );

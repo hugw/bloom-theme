@@ -5,9 +5,13 @@
     <header class="head" role="banner">
       <div class="grid-row">
         <div class="grid-column -medium-12">
-          {% block head %}
-            {% include 'partials/head.twig' %}
-          {% endblock %}
+          <div class="head-inner">
+            {% block head %}
+              {% include 'partials/head.twig' %}
+            {% endblock %}
+          </div>
+
+          {{ fn('bloom_breadcrumb') }}
         </div>
       </div>
 		</header>
@@ -37,9 +41,11 @@
     <footer class="footer" role="contentinfo">
       <div class="grid-row">
         <div class="grid-column -medium-12">
-          {% block footer %}
-            {% include 'partials/footer.twig' %}
-          {% endblock %}
+          <div class="head-inner">
+            {% block footer %}
+              {% include 'partials/footer.twig' %}
+            {% endblock %}
+          </div>
         </div>
       </div>
 		</footer>

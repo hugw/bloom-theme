@@ -1,18 +1,26 @@
 {% extends "layouts/default.twig" %}
 
 {% block body %}
-	{% if posts is not empty %}
-		{% if title %}
-			{% include 'partials/page-title.twig' %}
+	<div class="main">
+		{% if posts is not empty %}
+			{% if title %}
+				{% include 'partials/main-title.twig' %}
+			{% endif %}
+
+			<div class="main-posts">
+				{% for post in posts %}
+					{% include 'partials/post-list.twig' %}
+				{% endfor %}
+			</div>
+
+			<div class="main-pagination">
+				{% set pagination_opts = posts.pagination({show_all: false, mid_size: 2, end_size: 1}) %}
+				{% include 'partials/pagination.twig' with { pagination: pagination_opts } %}
+			</div>
+		{% else %}
+			<div class="main-page">
+				{% include 'partials/page-none.twig' %}
+			</div>
 		{% endif %}
-
-		{% for post in posts %}
-			{% include 'partials/post-list.twig' %}
-		{% endfor %}
-
-		{% set pagination_opts = posts.pagination({show_all: false, mid_size: 2, end_size: 1}) %}
-		{% include 'partials/pagination.twig' with { pagination: pagination_opts } %}
-	{% else %}
-		{% include 'partials/page-none.twig' %}
-	{% endif %}
+	</div>
 {% endblock %}

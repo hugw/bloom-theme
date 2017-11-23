@@ -1,7 +1,7 @@
-<article id="page-{{post.ID}}" class="page hentry">
-	{% include 'partials/page-title.twig' with { title: post.title } %}
+<article id="page-{{page.ID}}" class="page hentry">
+	{% include 'partials/page-title.twig' with { title: page.title } %}
 
 	<div class="page-content">
-		{{ post.content }}
+		{{ page.content }}
 	</div>
 </article>

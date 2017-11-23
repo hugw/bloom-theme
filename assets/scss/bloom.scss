@@ -88,9 +88,10 @@
 }
 
 // Titles
+.post-title,
 .page-title,
-.page-description,
-.post-title {
+.main-title,
+.main-description, {
   line-height: 1;
   font-size: rem-calc($fontsize);
   margin: 0;
@@ -251,9 +252,4 @@
     padding: 0;
     font-size: rem-calc($fontsize);
   }
-}
-
-// Comments
-.comments {
-  width: 100%;
 }

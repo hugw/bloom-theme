@@ -103,15 +103,9 @@ function bloom_settings( $name = NULL, $default = NULL ) {
 }
 
 /**
- * Generate random
- * strings
+ * Format body classes
+ * using modifier notation
  */
-function rng( $length = 10 ) {
-  $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-  $charactersLength = strlen( $characters );
-  $randomString = '';
-  for ( $i = 0; $i < $length; $i++ ) {
-      $randomString .= $characters[rand( 0, $charactersLength - 1 )];
-  }
-  return $randomString;
+function bloom_body_classes() {
+	return implode( ' ', array_map( function ($item) { return "is-{$item}"; }, get_body_class() ) );
 }
