@@ -3,7 +3,7 @@
 {% set shareit = __('share it', 'bloom') %}
 
 <div class="post-share" data-url="{{ url }}">
-	<div class="post-share_counter"></div>
+	<div class="post-share_counter"><span></span> {{ __('shares', 'bloom') }}</div>
 
 	<div class="post-share_item post-share_facebook">
 		<a href="https://www.facebook.com/sharer.php?u={{ url }}&t={{ text }}" class="popup" title="{{ shareit }}">

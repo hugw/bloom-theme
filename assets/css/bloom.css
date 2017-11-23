@@ -1504,12 +1504,12 @@ fieldset legend{background:#fff;padding:0 .3125rem;margin:0 0 0 -.3125rem;color:
 .post-preview{line-height:1}
 .pagination ul{line-height:1;font-size:0;list-style:none;margin:0}
 .pagination ul li{display:inline-block;padding:0;font-size:.875rem}
-.recent-posts_item,.search{display:-webkit-box;display:-ms-flexbox}
+.recent-posts_item,.search-form{display:-webkit-box;display:-ms-flexbox}
 .recent-posts{line-height:1}
 .recent-posts_item{display:flex}
 .recent-posts_thumbnail{width:7.5rem;margin-right:1.25rem}
 .recent-posts_body{-webkit-box-flex:1;-ms-flex:1 1 50%;flex:1 1 50%;width:50%}
-.search{display:flex;width:100%}
+.search-form{display:flex;width:100%}
 .search-field{-webkit-box-flex:1;-ms-flex:1 1 60%;flex:1 1 60%;width:60%}
 .search-action{-webkit-box-flex:0;-ms-flex:0 0 5rem;flex:0 0 5rem;width:5rem;margin-left:1.25rem}
 .post-related{line-height:1}

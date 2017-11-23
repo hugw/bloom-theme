@@ -18,24 +18,25 @@ jQuery(document).ready(($) => {
 jQuery(document).ready(($) => {
   $(window).load(() => {
     const $els = $('.post-share')
+    const formatter = num => (num > 999 ? `${(num / 1000).toFixed(1)}k` : num)
 
     if ($els.length) {
       $els.each(function () {
         const $this = $(this)
-        const url = $(this).data('url')
+        const url = $this.data('url')
 
         if (typeof url === 'undefined') return
+        const fbUrl = `https://graph.facebook.com/v2.11/?id=${url}&access_token=${window.fbToken}&fields=engagement` // eslint-disable-line
 
-        const fbUrl = `https://graph.facebook.com/?id=${url}`
-
-        $.get(fbUrl, ({ share }, status, jqXHR) => {
+        $.get(fbUrl, (res, status, jqXHR) => {
+          const $counter = $this.find('.post-share_counter')
           let count = 0
 
           if (jqXHR.status === 200 && status === 'success') {
-            count = share.share_count + share.comment_count
+            count = Object.values(res.engagement).reduce((a, b) => a + b, 0)
           }
 
-          $this.find('.share-counter').text(count)
+          if (count) $counter.show().find('span').text(formatter(count))
         })
       })
     }

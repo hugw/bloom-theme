@@ -125,14 +125,12 @@ add_action( 'wp_enqueue_scripts', function() {
  */
 add_action( 'wp_enqueue_scripts', function() {
 	wp_enqueue_script( 'jquery' );
-
-	// if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) wp_enqueue_script( 'comment-reply' );
-
+	wp_enqueue_script( 'polyfill', 'https://cdn.polyfill.io/v2/polyfill.min.js' );
 	wp_enqueue_script( 'bloom-theme' , BLOOM_URL . '/assets/js/bloom.min.js' );
 
-	// add_action( 'wp_head', function() {
-	// 	echo '<script type="text/javascript">var ajaxurl = \'' . admin_url( 'admin-ajax.php' ) . '\';</script>';
-	// } );
+	add_action( 'wp_head', function() {
+		echo '<script type="text/javascript">var fbToken = "' . bloom_settings('fb_token') . '";</script>';
+	} );
 
 	// Enqueue child themes scripts
 	do_action( '_bloom_enqueue_scripts' );

@@ -60,7 +60,10 @@ add_action( 'after_setup_theme', function() {
 			'width' => 120,
 			'height' => 68,
 			'crop' => true
-		]
+		],
+
+		// Facebook Token
+		'fb_token' => '',
 	];
 
 	// Merge child theme config values
