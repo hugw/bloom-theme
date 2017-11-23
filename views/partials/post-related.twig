@@ -1,7 +1,7 @@
 {% if related_posts is not empty %}
 <div class="post-related">
-	<div class="post-related_title">
-		{{ __( 'Related Posts', 'bloom' ) }}
+	<div class="post-related_head">
+		<span>{{ __( 'Related Posts', 'bloom' ) }}</span>
 	</div>
 
 	<div class="post-related_items">
@@ -10,7 +10,7 @@
 				{% if post.get_thumbnail %}
 					<div class="post-related_thumbnail">
 						<a href="{{ post.link }}" title="{{ post.title | e('html') }}">
-							<img src="{{ post.thumbnail.src | resize(610) }}" alt="{{ post.title | e('html') }}" title="{{ post.title | e('html') }}" />
+							<img src="{{ post.thumbnail.src('related-posts') }}" alt="{{ post.title | e('html') }}" title="{{ post.title | e('html') }}" />
 						</a>
 					</div>
 				{% endif %}

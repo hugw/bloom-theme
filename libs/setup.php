@@ -54,6 +54,9 @@ add_action( 'after_setup_theme', function() {
 	$rp_thumb = bloom_settings( 'recent_posts_thumbnail_size' );
 	add_image_size('recent-posts', $rp_thumb->width, $rp_thumb->height, $rp_thumb->crop );
 
+	$rlp_thumb = bloom_settings( 'related_posts_thumbnail_size' );
+	add_image_size('related-posts', $rlp_thumb->width, $rlp_thumb->height, $rlp_thumb->crop );
+
 	// Disable Jetpack Open Graph
 	// when WPSEO by Yoast is present
 	if ( defined('WPSEO_VERSION') && defined( 'JETPACK__VERSION' ) ) {

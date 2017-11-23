@@ -62,6 +62,12 @@ add_action( 'after_setup_theme', function() {
 			'crop' => true
 		],
 
+		'related_posts_thumbnail_size' => (object) [
+			'width' => 300,
+			'height' => 170,
+			'crop' => true
+		],
+
 		// Facebook Token
 		'fb_token' => '',
 	];

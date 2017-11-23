@@ -49,12 +49,29 @@ jQuery(document).ready(($) => {
  * when available
  */
 jQuery(document).ready(($) => {
-  const $related = $('.relatedposts')
-  const $placeholder = $('.post-content p').contents().map(function () {
-    return (this.nodeType === 8) ? $(this).parent() : null
-  })
+  const mobileWidth = 960
+  const $related = $('.post-related')
+  const $footprint = $('<span id="rp-footprint"></span>')
 
-  if ($related.length && $placeholder.length) {
-    $placeholder[0].replaceWith($related)
+  $related.after($footprint)
+
+  $(window).on('resize', () => checkRelatedPosition())
+
+  checkRelatedPosition()
+
+  function checkRelatedPosition() {
+    const width = $(window).width()
+
+    const $placeholder = $('.post-content p').contents().map(function () {
+      return (this.nodeType === 8 && this.nodeValue.trim() === 'related-posts') ? $(this).parent() : null // eslint-disable-line
+    })
+
+    if ($related.length && $placeholder.length) {
+      if (width > mobileWidth) {
+        $placeholder[0].after($related)
+      } else {
+        $footprint.after($related)
+      }
+    }
   }
 })

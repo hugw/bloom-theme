@@ -10,6 +10,7 @@
     "semi": ["error", "never"],
     "comma-dangle": "off",
     "max-len": ["error", { "ignoreComments": true }],
-    "func-names": ["error", "never"]
+    "func-names": ["error", "never"],
+    "no-use-before-define": "off"
   }
 }
