@@ -1,10 +1,16 @@
 {% extends "layouts/default.twig" %}
 
 {% block body %}
-	<article class="page -404 -notfound">
-		<div class="page-content">
-			<p><i class="icon -exclamation-triangle"></i> 404</p>
-			<p>{{ _e('It looks like nothing was found at this location', 'bloom') }}</p>
-		</div>
-	</article>
+<div class="main">
+	<div class="main-page">
+		<article class="page -404 -notfound">
+				{% include 'partials/page-title.twig' with { title: '<i class="icon -exclamation-triangle"></i> Page Not Found' } %}
+
+
+			<div class="page-content">
+				<p>{{ _e('It looks like nothing was found at this location.', 'bloom') }}</p>
+			</div>
+		</article>
+	</div>
+</div>
 {% endblock %}

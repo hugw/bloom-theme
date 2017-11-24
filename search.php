@@ -9,6 +9,6 @@
 
 $ctx = Timber::get_context();
 $ctx['posts'] = new Timber\PostQuery();
-$ctx['title'] = sprintf( __( 'Search Results for: %s', 'bloom' ), '<span>' . get_search_query() . '</span>' );
+$ctx['title'] = sprintf( __( 'Search Results for: %s', 'bloom' ), '<strong>' . get_search_query() . '</strong>' );
 
 Timber::render( ['search.twig', 'archive.twig', 'index.twig'], $ctx );
