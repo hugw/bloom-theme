@@ -14,13 +14,17 @@
 
 $width: 790px !default;
 
-html .mceContentBody {
+html .mce-content-body {
 	margin: rem-calc(10 0 0 10);
 	max-width: $width;
 	color: $color-foreground;
 	font-size: rem-calc($fontsize);
 	font-family: $fontfamily;
 	line-height: $lineheight;
+}
+
+.wp-more-tag {
+	height: 16px !important;
 }
 
 .mceItemNoResize {

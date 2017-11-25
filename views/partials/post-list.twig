@@ -1,4 +1,4 @@
-<article id="post-{{ post.ID }}" class="post -list hentry">
+<article id="post-{{ post.ID }}" class="post -list hentry {{ fn('is_sticky') ? '-sticky' : '' }}">
   {% include 'partials/post-thumbnail.twig' %}
   {% include 'partials/post-title.twig' %}
   {% include 'partials/post-preview.twig' %}
