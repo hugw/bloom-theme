@@ -6,11 +6,13 @@
 
   <div class="post-pagination_items">
     {% for page in post.pagination.pages %}
-      {% if page.current %}
-        <span>{{ page.title }}</span>{{ loop.last ? '' : ', ' }}
-      {% else %}
-        <a href="{{ page.link }}">{{ page.title }}</a>{{ loop.last ? '' : ', ' }}
-      {% endif %}
+      <div class="post-pagination_item">
+        {% if page.current %}
+          <span>{{ page.title }}</span>
+        {% else %}
+          <a href="{{ page.link }}">{{ page.title }}</a>
+        {% endif %}
+      </div>
     {% endfor %}
   </div>
 </div>

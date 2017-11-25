@@ -236,6 +236,23 @@
   }
 }
 
+.post-pagination {
+  margin: rem-calc(0 0 30 0);
+}
+
+.post-pagination,
+.post-pagination_items {
+  display: flex;
+
+  a, span {
+    display: block;
+  }
+
+  span {
+    cursor: pointer;
+  }
+}
+
 // Footer
 .footer {
   line-height: 1;
